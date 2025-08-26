@@ -1,3 +1,41 @@
 /* Assignment 05
 Custom CSS Layout
 Author: Efthaqur Alam */
+
+
+/* Style for logo box here  */
+
+.logo{
+    height: 50px;
+    width: 50px;
+}
+
+.logo_text{
+    color:#006747;
+        
+}
+
+/* Style for Banner goes here */
+.banner{
+    background: #013223;
+    background: linear-gradient(90deg, rgba(1, 50, 35, 1) 0%, rgba(0, 103, 71, 1) 50%, rgba(1, 50, 35, 1) 100%);
+}
+
+.banner_logo{
+    
+    padding: 10px
+}
+
+.head_text{
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+.sub_head_text{
+    color: white;
+    text-align: center;
+    font-size: 0.4em;
+    padding: 10px;
+}

@@ -8,12 +8,32 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section class="nav_section">
-        <nav></nav>
+    <section class="nav_section p-[20px]">
+        <nav class="flex justify-between">
+            <div class="logo_box flex">
+                <img src="./assets/logo.png" alt="" class="logo">
+                <span class="logo_text px-1 font-extrabold">Emergency <br> Service</span>
+            </div>
+            <div class="info flex gap-3 justify-between">
+                <div class="heart flex gap-1">
+                    <span class="heart_data">0</span>
+                    <img src="./assets/heart.png" alt="heart_data_img" class="w-[20px] h-[20px]">
+                </div>
+                <div class="coins flex gap-1">
+                    <span class="coin_data">0</span>
+                    <img src="./assets/coin.png" alt="coin_data_img" class="w-[20px] h-[20px]">
+                </div>
+                <div class="clipboard">
+                    <p>Copy</p>
+                </div>
+            </div>
+        </nav>
     </section>
     <section class="banner_section">
-        <div class="banner">
-
+        <div class="banner flex flex-col items-center">
+            <img src="./assets/logo-dark.png" alt="banner_logo" class="banner_logo w-[92px] h-[92px]">
+            <h1 class="head_text">Emergency Service Directory</h1>
+            <h3 class="sub_head_text">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</h3>
         </div>
     </section>
     <section class="container">
