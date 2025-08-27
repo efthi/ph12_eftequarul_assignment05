@@ -36,6 +36,13 @@ Author: Efthaqur Alam */
 .sub_head_text{
     color: white;
     text-align: center;
-    font-size: 0.4em;
+    font-size: 0.8em;
     padding: 10px;
+}
+
+/* Grid Icons*/
+.icon{
+    width: 24px;
+    height: 24px;
+   
 }
