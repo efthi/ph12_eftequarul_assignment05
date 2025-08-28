@@ -53,10 +53,14 @@ for( let dialCall of dialCalls){
                     document.getElementById("coin_number").innerText = coinAmount;
                     
                      let callLog = new Date().toLocaleDateString();
+                     let time = new Date().toLocaleTimeString();
                      let li = document.createElement("li")
                      li.classList.add("list-row");
                      li.innerHTML = `
-                     <p>${serviceName.innerText} - ${serviceNumber.innerText} - T: ${callLog}</p>
+                     <div class="p-1">${serviceName.innerText}</div>
+                    <div class="text-md text-center uppercase font-semibold opacity-80">Number: ${serviceNumber.innerText}</div>
+                    <div class="p-1 text-right">Date: ${callLog} Time: ${time}</div>
+                    <div class="divider divider-accent">**</div>
                      `
                      document.getElementById("call_logs").prepend(li);
 
