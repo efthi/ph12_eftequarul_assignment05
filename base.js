@@ -5,15 +5,15 @@ Author: Efthaqur Alam */
 
 // Heart count 
 let heartAmount = document.getElementById("heart_number");
-console.log(heartAmount.innerText);
+
 let heartIco =  document.getElementsByClassName("heart_ico");
-console.log(heartIco);
+//console.log(heartIco);
 for(let count of heartIco){
     count.addEventListener("click", function(){
         let heartCurrent = parseInt(heartAmount.innerText);
         heartCurrent++;
         document.getElementById('heart_number').innerText = heartCurrent;
-        console.log(heartCurrent);
-        alert('heart added!');
+        //console.log(heartCurrent);
+       
     });
 }
