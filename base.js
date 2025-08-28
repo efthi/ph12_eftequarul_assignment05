@@ -9,12 +9,15 @@ Author: Efthaqur Alam */
 let heartAmount = document.getElementById("heart_number");
 
 let heartIco =  document.getElementsByClassName("heart_ico");
+let heartAni = document.querySelector('.heart_ani');
 //console.log(heartIco);
 for(let count of heartIco){
     count.addEventListener("click", function(){
         let heartCurrent = parseInt(heartAmount.innerText);
         heartCurrent++;
         document.getElementById('heart_number').innerText = heartCurrent;
+        heartAni.classList.add('fa-beat');
+        
         //console.log(heartCurrent);
        
     });
@@ -22,7 +25,16 @@ for(let count of heartIco){
 
 // Copy count 
 
+let copyAmount = document.getElementById('copy_counter');
+let copyBtn = document.getElementsByClassName('copy_btn');
+    for( let count of copyBtn){
+        count.addEventListener('click', ()=>{
+            let copyCounter = parseInt(copyAmount.innerText);
+            copyCounter++;
+            document.getElementById('copy_counter').innerText = copyCounter;
+        })
 
+    }
 
 
 // Call Functionality
