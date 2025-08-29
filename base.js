@@ -30,8 +30,12 @@ let copyBtn = document.getElementsByClassName('copy_btn');
     for( let count of copyBtn){
         count.addEventListener('click', ()=>{
             let copyCounter = parseInt(copyAmount.innerText);
+            let hotLine = count.parentElement.previousElementSibling.previousElementSibling;
+            //console.log(hotLine.innerText);
             copyCounter++;
             document.getElementById('copy_counter').innerText = copyCounter;
+            navigator.clipboard.writeText(hotLine.innerText);
+            alert("Hotline Number: "+hotLine.innerText+ " Copied!");
         })
 
     }
@@ -76,7 +80,8 @@ for( let dialCall of dialCalls){
     let callLogs = document.getElementById('call_logs');
     let clearLogs = document.getElementById('clear_logs');
     clearLogs.addEventListener('click', function(){
-        callLogs.innerHTML ="History Cleared";
+        callLogs.innerHTML = `<div class="text-md text-center uppercase font-semibold opacity-80"><i class="fa-regular fa-circle-check"></i> History Cleared</div>`;
+        
     })
 
 
