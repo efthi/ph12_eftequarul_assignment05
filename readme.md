@@ -8,6 +8,46 @@
 
 ---
 
+---
+### এই  এসাইনমেন্টের ৬নং সেকশনের সমাধান-
+Answer the following questions clearly:
+1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
+> getElementById()- এর মাধ্যমে শুধু একটি এলিমেন্ট সিলেক্ট করা যায়, যদি কোন এলিমেন্টের আইডি id="fixed-msg" এভাবে দেওয়া হয় তবে সেই এলিমেন্ট এই মেথডের মাধ্যমে সিলেক্ট করা যায়। এটি এই ক্ষেত্রে কেবল একটি সিংগেল এলিমেন্ট রিটার্ন করবে।
+> getElementsByClassName()- এর মাধ্যমে একাধিক এলিমেন্ট সিলেক্ট করা যায়,  একাধিক এলিমেন্টের ক্লাস class="msg-list" এভাবে দেওয়া হয় তবে সেই সকল এলিমেন্ট এই মেথডের মাধ্যমে সিলেক্ট করা যায়। এটি এই ক্ষেত্রে অ্যারে লাইক অবজেক্ট রিটার্ন করবে এবং যদি পুরো ডকুমেন্টের কোথাও এলিমেন্ট আপডেট হয় তবে এর রিটার্ন করা HTMLCollection এর তালিকাও আপডেট হয়ে যাবে।
+>querySelector()- css সিলেক্টর আইডি বা ক্লাস দিয়ে মানে #fixed-msg বা .msg-list এভাবে যেকোন এলিমেন্টে এক্সেস করা যায়, তবে class দিয়ে সিলেক্ট করলে কেবল প্রথম এলিমেন্টটাই সিলেক্ট করবে, এটি কেবল একটি এলিমেন্ট রিটার্ন করবে।
+>querySelectorAll()- css সিলেক্টর ক্লাস দিয়ে মানে .msg-list এভাবে সব এলিমেন্টে এক্সেস করা যায়, এটি NodeList রিটার্ন করে যেটি ডকুমেন্টের কোন আপডেট হলে মানে DOM এ কোন পরিবর্তন হলে তার রিটার্ন করা NodeList এ পরিবর্তন করবে না।
+---
+2. How do you **create and insert a new element into the DOM**?
+> const newElement = document.createElement('tag name') দিয়ে এলিমেন্ট তৈরি করতে হয় এবং newElement.textContent দিয়ে সেটার কনটেন্ট দেওয়া কিংবা innerText দিয়েও দেওয়া যায় এরপরে classList.add('class name') দিয়ে ক্লাস নেম সেট করা যায়
+> append, appendChild, prepend, before, after, insertBefore এগুলো দিয়ে ইনসার্ট করা যায়।
+```sh
+const newElement = document.createElement('div');
+newElement.textContent = "Hello World!";
+newElement.classList.add('my-class');
+document.body.appendChild(newElement);
+```
+---
+3. What is **Event Bubbling** and how does it work?
+>যখন একটি এলিমেন্টে ইভেন্ট ঘটে (যেমন: ক্লিক), তখন ইভেন্টটি নিচ থেকে উপরের দিকে (টার্গেট → প্যারেন্ট → দাদা → ... → document) প্রোপাগেট করে।
+```sh
+<div onclick="alert('Div')">
+  <button onclick="alert('Button')">ক্লিক করুন</button>
+</div>
+```
+বাটনে ক্লিক করলে প্রথমে বাটনের ইভেন্ট হ্যান্ডলার ট্রিগার হবে, তারপর ডিভের হ্যান্ডলার। এইযে ইভেন্ট এভাবে পাস হচ্ছে এটাকেই বলে**Event Bubbling**
+
+---
+4. What is **Event Delegation** in JavaScript? Why is it useful?
+>ইভেন্ট ডেলিগেশন হলো একটি প্যারেন্ট এলিমেন্টে ইভেন্ট লিসেনার যোগ করে তার চাইল্ড এলিমেন্টগুলোর ইভেন্ট হ্যান্ডল করার পদ্ধতি। এটি ইভেন্ট বাবলিং-এর উপর ভিত্তি করে কাজ করে।
+---
+5. What is the difference between **preventDefault() and stopPropagation()** methods?
+>preventDefault()	এলিমেন্টের ডিফল্ট behavior বন্ধ করে, ইভেন্ট প্রোপাগেশন বন্ধ করে না।	লিংক ক্লিক করলে পেজ রিলোড না করা। ব্রাউজারের ডিফল্ট অ্যাকশন থামায় (যেমন: লিঙ্কে গেলে ন্যাভিগেশন, form submit, checkbox টগল)।
+> stopPropagation()	ইভেন্টের বাবলিং/ক্যাপচারিং বন্ধ করে, ডিফল্ট behavior বন্ধ করে না।	
+
+---
+
+---
+
 ## ✅ Main Requirements (50 Marks)
 
 ### 1. Navbar
