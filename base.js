@@ -2,9 +2,6 @@
 JavaScript 
 Author: Efthaqur Alam */
 
-
-
-
 // Heart count 
 let heartAmount = document.getElementById("heart_number");
 
@@ -59,7 +56,7 @@ for( let dialCall of dialCalls){
                      let callLog = new Date().toLocaleDateString();
                      let time = new Date().toLocaleTimeString();
                      let li = document.createElement("li")
-                     li.classList.add("list-row");
+                     li.classList.add("list-row", "marker:font-semibold");
                      li.innerHTML = `
                      <div class="p-1">${serviceName.innerText}</div>
                     <div class="text-md text-center uppercase font-semibold opacity-80">Number: ${serviceNumber.innerText}</div>

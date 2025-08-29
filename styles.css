@@ -12,7 +12,6 @@ Author: Efthaqur Alam */
 
 .logo_text{
     color:#006747;
-        
 }
 
 /* Style for Banner goes here */
@@ -22,8 +21,7 @@ Author: Efthaqur Alam */
 }
 
 .banner_logo{
-    
-    padding: 10px
+        padding: 10px
 }
 
 .head_text{
@@ -43,6 +41,5 @@ Author: Efthaqur Alam */
 /* Grid Icons*/
 .icon{
     width: 24px;
-    height: 24px;
-   
+    height: 24px;  
 }
