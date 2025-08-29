@@ -27,11 +27,12 @@ let copyBtn = document.getElementsByClassName('copy_btn');
     for( let count of copyBtn){
         count.addEventListener('click', ()=>{
             let copyCounter = parseInt(copyAmount.innerText);
-            let hotLine = count.parentElement.previousElementSibling.previousElementSibling;
-            //console.log(hotLine.innerText);
             copyCounter++;
             document.getElementById('copy_counter').innerText = copyCounter;
-            navigator.clipboard.writeText(hotLine.innerText);
+
+            let hotLine = count.parentElement.previousElementSibling.previousElementSibling; //এক এলিমেন্ট থেকে অন্য এলিমেন্টে এক্সেস সেট করা হচ্ছে
+            //console.log(hotLine.innerText);
+            navigator.clipboard.writeText(hotLine.innerText); //এই মেথড নেট থেকে সার্চ করে বের করা, আরও বিস্তারিত জানতে হবে
             alert("Hotline Number: "+hotLine.innerText+ " Copied!");
         })
 
@@ -44,8 +45,8 @@ let dialCalls = document.getElementsByClassName("call_btn");
 
 for( let dialCall of dialCalls){
             dialCall.addEventListener('click', function(){
-                let serviceNumber = dialCall.parentElement.previousElementSibling.previousElementSibling;
-                let serviceName = serviceNumber.previousElementSibling;
+                let serviceNumber = dialCall.parentElement.previousElementSibling.previousElementSibling; //এলিমেন্ট এক্সেস করা হচ্ছে
+                let serviceName = serviceNumber.previousElementSibling; //এলিমেন্ট এক্সেস করা হচ্ছে
                 console.log(serviceName.innerText, serviceNumber.innerText);
                let coinAmount = parseInt(document.getElementById("coin_number").innerText);
                 if(coinAmount >= 20 ){
@@ -53,14 +54,15 @@ for( let dialCall of dialCalls){
                     coinAmount = coinAmount - 20;
                     document.getElementById("coin_number").innerText = coinAmount;
                     
-                     let callLog = new Date().toLocaleDateString();
-                     let time = new Date().toLocaleTimeString();
+                     let callLog = new Date().toLocaleDateString(); //Date জেনারেট করা, নেট থেকে সার্চ করে নেওয়া
+                     let time = new Date().toLocaleTimeString(); // Date অবজেক্ট এর সময় এক্সেস করা
                      let li = document.createElement("li")
                      li.classList.add("list-row", "marker:font-semibold");
                      li.innerHTML = `
                      <div class="p-1">${serviceName.innerText}</div>
                     <div class="text-md text-center uppercase font-semibold opacity-80">Number: ${serviceNumber.innerText}</div>
-                    <div class="p-1 text-right">Date: ${callLog} Time: ${time}</div>
+                    <div class="p-1 text-center">
+                    <i class="fa-regular fa-calendar-days"></i> ${callLog} <i class="fa-regular fa-clock"></i>${time}</div>
                     <div class="divider divider-accent">**</div>
                      `
                      let logsCheck = document.getElementById('cleared_msg');
