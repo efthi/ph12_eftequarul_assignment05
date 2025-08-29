@@ -33,7 +33,7 @@ let copyBtn = document.getElementsByClassName('copy_btn');
             let hotLine = count.parentElement.previousElementSibling.previousElementSibling; //এক এলিমেন্ট থেকে অন্য এলিমেন্টে এক্সেস সেট করা হচ্ছে
             //console.log(hotLine.innerText);
             navigator.clipboard.writeText(hotLine.innerText); //এই মেথড নেট থেকে সার্চ করে বের করা, আরও বিস্তারিত জানতে হবে
-            alert("Hotline Number: "+hotLine.innerText+ " Copied!");
+            alert("Hotline Number: "+hotLine.innerText+ " Copied! ✅");
         })
 
     }
@@ -50,7 +50,7 @@ for( let dialCall of dialCalls){
                 console.log(serviceName.innerText, serviceNumber.innerText);
                let coinAmount = parseInt(document.getElementById("coin_number").innerText);
                 if(coinAmount >= 20 ){
-                    alert("Calling to: "+serviceName.innerText+", Service Number: "+serviceNumber.innerText);
+                    alert("Calling to: "+serviceName.innerText+", Service Number: 📞 "+serviceNumber.innerText);
                     coinAmount = coinAmount - 20;
                     document.getElementById("coin_number").innerText = coinAmount;
                     
@@ -60,7 +60,7 @@ for( let dialCall of dialCalls){
                      li.classList.add("list-row", "marker:font-semibold");
                      li.innerHTML = `
                      <div class="p-1">${serviceName.innerText}</div>
-                    <div class="text-md text-center uppercase font-semibold opacity-80">Number: ${serviceNumber.innerText}</div>
+                    <div class="text-md text-center font-semibold opacity-80">Number: 📞 ${serviceNumber.innerText}</div>
                     <div class="p-1 text-center">
                     <i class="fa-regular fa-calendar-days"></i> ${callLog} <i class="fa-regular fa-clock"></i>${time}</div>
                     <div class="divider divider-accent">**</div>
@@ -75,15 +75,16 @@ for( let dialCall of dialCalls){
                     alert("You don't have sufficient balance!");
                 }
             })
-
+            
         }
     
     let callLogs = document.getElementById('call_logs');
     let clearLogs = document.getElementById('clear_logs');
     clearLogs.addEventListener('click', function(){
-        callLogs.innerHTML = `<div id="cleared_msg" class="text-md text-center uppercase font-semibold opacity-80"><i class="fa-regular fa-circle-check"></i> History Cleared</div>`;
+        callLogs.innerHTML = `<div id="cleared_msg" class="text-md text-center uppercase font-semibold opacity-80"><i class="fa-regular fa-circle-check"></i> History Cleared ✅ </div>`;
         
     })
+
 
 
 
