@@ -66,8 +66,10 @@ for( let dialCall of dialCalls){
                     <div class="p-1 text-right">Date: ${callLog} Time: ${time}</div>
                     <div class="divider divider-accent">**</div>
                      `
+                     let logsCheck = document.getElementById('cleared_msg');
+                     logsCheck ? logsCheck.remove() : null;
                      document.getElementById("call_logs").prepend(li);
-
+                    
 
                 }
                 else{
@@ -80,7 +82,7 @@ for( let dialCall of dialCalls){
     let callLogs = document.getElementById('call_logs');
     let clearLogs = document.getElementById('clear_logs');
     clearLogs.addEventListener('click', function(){
-        callLogs.innerHTML = `<div class="text-md text-center uppercase font-semibold opacity-80"><i class="fa-regular fa-circle-check"></i> History Cleared</div>`;
+        callLogs.innerHTML = `<div id="cleared_msg" class="text-md text-center uppercase font-semibold opacity-80"><i class="fa-regular fa-circle-check"></i> History Cleared</div>`;
         
     })
 
